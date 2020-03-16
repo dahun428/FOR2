@@ -1,0 +1,55 @@
+package Array;
+
+import java.util.Scanner;
+
+public class ArrayDemo15 {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		// 난수 3개 생성해서 배열에 담기
+		int[] secret = new int[3];
+		for (int i=0; i<secret.length; i++) {
+			secret[i] = (int)(Math.random()*9+1);
+		}
+		
+		int[] input = new int[3];
+		int  trial=0;
+		int count = 0;
+		
+		while (true) {
+
+			int strike = 0;
+			int ball = 0;
+
+			for (int i = 0; i < secret.length; i++) {
+				System.out.print("숫자를 입력하세요 : ");
+				input[i] = scanner.nextInt();
+			}
+			for (int i = 0; i < secret.length; i++) {
+				for (int j = 0; j < input.length; j++) {
+					if (secret[i] == input[j]) {
+						if (i == j) {
+							strike++;
+						} else {
+							ball++;
+						}
+					}
+				}
+			}
+			count++;
+			System.out.println(strike + "스트라이크, " + ball + "볼");
+
+			if (strike == 3) {
+				System.out.println("정답입니다.");
+				break;
+			}
+			if (count == 10) {
+				System.out.println("제한 횟수 초과.");
+				break;
+			}
+		}
+		
+	}
+	
+}	
