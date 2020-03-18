@@ -1,0 +1,108 @@
+package Homework;
+
+import java.util.Scanner;
+
+
+/*
+1번 과제
+  
+StudentDemo 클래스를 정의하고 아래의 내용을 구현하시오
+  StudentDemo에 학생정보를 여러 개 저장할 수 있는 배열을 생성하시오.
+  StudentDemo에 학생정보를 조회, 검색, 입력, 종료하는 메뉴를 제공하시오.
+    ===============================================
+    1.조회  2.검색  3.입력  0.종료
+    ===============================================
+  StudentDemo에서 조회메뉴를 선택하면
+    학생이름  반  번호  국어점수  영어점수  수학점수  총점  평균 을 화면에 출력하시오
+    ========================================================
+  StudentDemo에서 검색메뉴를 선택하면
+    이름을 입력받아서 이름과 일치하는 학생을 정보를 화면에 출력하시오
+    학생정보 출력시 멤버메소드 중에서 출력기능을 활용하시오.
+  StudentDemo에서 입력메뉴를 선택하면
+    학생이름, 반, 번호, 국어점수, 영어점수, 수학점수를 입력받아서 Student 객체에 저장하시오.
+  StudentDemo에서 종료메뉴를 선택하면
+    반복문을 탈출해서 프로그램을 
+ */
+public class StudentDemo {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Student student = new Student();
+		Student[] students = new Student[100];
+		int savePosition = 0;
+		
+		while (true) {
+			System.out.println("===============================================\r\n" + 
+					"1.조회  2.검색  3.입력  0.종료\r\n" + 
+					"===============================================");
+			
+			System.out.print("번호를 입력하시오: ");
+			int MenuNo = sc.nextInt();
+			
+			if (MenuNo == 1) {
+				System.out.println();
+				System.out.println("[전체 주문내용 조회]");
+				if (savePosition == 0) {
+					System.out.println("고객 주문내용이 존재하지 않습니다.");
+				} else {
+
+				for(int i = 0; i <savePosition; i++) {
+					Student stud = students[i];
+					stud.display();
+					}
+				}
+			} else if (MenuNo == 2) {
+				System.out.print("검색할 이름을 입력하시오: ");
+				String name = sc.next();
+				for(int i=1; i<= savePosition; i++) {
+					if (name == student.studentName) {
+						student.display();
+					}
+				}
+			} else if (MenuNo == 3) {
+				System.out.print("이름을 입력하시오: ");
+//				student.studentName = sc.next();
+				String StudentName = sc.next();
+				System.out.print("반을 입력하시오: ");
+				String room = sc.next();
+//				student.room = sc.next();
+				System.out.print("번호를 입력하시오: ");
+				int num = sc.nextInt();
+//				student.num = sc.nextInt();
+				System.out.print("국어점수를 입력하시오: ");
+				int korscore = sc.nextInt();
+//				student.korscore = sc.nextInt();
+				System.out.print("영어점수를 입력하시오: ");
+				int engscore = sc.nextInt();
+//				student.engscore = sc.nextInt();
+				System.out.print("수학점수를 입력하시오: ");
+				int mathscore = sc.nextInt();
+//				student.mathscore= sc.nextInt();
+				
+				Student stud = new Student();
+				stud.studentName = StudentName;
+				stud.room = room;
+				stud.num = num;
+				stud.korscore = korscore;
+				stud.engscore = engscore;
+				stud.mathscore = mathscore;
+				
+				students[savePosition] = stud;
+				
+//				students[savePosition] = student;
+				savePosition++;
+			} else if (MenuNo == 0) {
+				System.out.println("시스템을 종료합니다.");
+				break;
+			}			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+}
