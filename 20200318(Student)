@@ -1,0 +1,148 @@
+package oop2;
+
+public class Student {
+	
+	String studentName; //학생이름
+	int classNum;	//반
+	int studentId; //번호
+	int korScore, engScore, mathScore; //국어, 영어, 수학점수
+	int totalScore;
+	int avgScore;
+	
+	//총점
+	int sum() {
+		int totalScore = korScore + engScore + mathScore;
+		this.totalScore = totalScore;
+		return totalScore;
+	}
+	//평균
+	int avg() {
+		int avgScore = totalScore/3;
+		this.avgScore = avgScore;
+		return avgScore;
+	}
+	//조회
+	void display() {
+		System.out.print(studentName+"\t");
+		System.out.print(classNum+"\t");
+		System.out.print(studentId+"\t");
+		System.out.print(korScore+"\t");
+		System.out.print(engScore+"\t");
+		System.out.print(mathScore+"\t");
+		System.out.print(totalScore+"\t");
+		System.out.println(avgScore);
+	}
+	public Student(String studentName, int classNum, int studentId, int korScore, int engScore, int mathScore) {
+		
+		this.studentName = studentName;
+		this.classNum = classNum;
+		this.studentId = studentId;
+		this.korScore = korScore;
+		this.engScore = engScore;
+		this.mathScore = mathScore;
+		
+	}
+	
+	
+}
+package oop2;
+
+import java.util.Scanner;
+
+public class StudentDemo {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int savePoint = 0;
+		
+		Student[] stuArray = new Student[100];
+		
+		while(true) {
+
+			System.out.println();
+			System.out.println("================================");
+			System.out.println("1.조회	2.검색	3.입력	0.종료");
+			System.out.println("================================");
+			System.out.println();
+			int inputNum = sc.nextInt();
+			
+			//조회
+			if(inputNum == 1) {
+
+				System.out.println();
+				System.out.println("=========================================================");
+				System.out.println("학생이름	반	번호	국어점수	영어점수	수학점수	총점	평균");
+				System.out.println("=========================================================");
+				
+				for(int i = 0; i < savePoint; i++) {
+					Student stu = stuArray[i];
+					stu.display();
+				}
+			//검색	
+			}else if(inputNum ==2) {
+				
+				System.out.print("검색하고자하는 학생이름을 입력하세요 : ");
+				String studentName = sc.next();
+				
+				System.out.println();
+				System.out.println("=========================================================");
+				System.out.println("학생이름	반	번호	국어점수	영어점수	수학점수	총점	평균");
+				System.out.println("=========================================================");
+				
+				
+				for(int i = 0; i < savePoint; i++) {
+					Student stu = stuArray[i];
+					if(studentName.equals(stu.studentName)) {
+						stu.display();
+						break;
+					}
+				}
+				
+			//입력	
+			}else if(inputNum ==3) {
+				
+				System.out.print("학생이름을 입력하세요 : ");
+				String studentName = sc.next();
+				
+				System.out.print("반을 입력하세요 : ");
+				int classNum = sc.nextInt();
+				
+				System.out.print("학생번호을 입력하세요 : ");
+				int studentId = sc.nextInt();
+								
+				System.out.print("국어점수를 입력하세요 : ");
+				int korScore = sc.nextInt();
+								
+				System.out.print("영어점수를 입력하세요 : ");
+				int engScore = sc.nextInt();
+				
+				System.out.print("수학점수를 입력하세요 : ");
+				int mathScore = sc.nextInt();
+				
+				Student stu = new Student(studentName, classNum, studentId, korScore, engScore, mathScore);
+				stu.sum();
+				stu.avg();
+				stuArray[savePoint] = stu;
+				savePoint++;
+				
+			//종료	
+			}else if(inputNum ==0) {
+				System.out.println("프로그램을 종료합니다.");
+				System.exit(0);
+				sc.close();
+				
+			}else {
+				System.out.println("잘못된 입력입니다. 다시 입력해주세요");
+				
+			}
+			
+		}
+		
+		
+	}
+	
+	
+	
+}
+
