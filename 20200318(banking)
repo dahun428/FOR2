@@ -1,0 +1,291 @@
+package oop2;
+
+/**
+ * 계좌에 대한 입금기능, 출금기능, 조회기능, 비밀번호 변경 기능, 해지기능을 제공하는 클래스
+ * @author JHTA
+ *
+ */
+
+public class Bangking {
+
+	static final double RATE_OF_INTEREST = 0.021;
+	String name; //소유주
+	String no; //계좌번호
+	int password; // 패스워드
+	long balance; // 잔액
+	int period; // 기간
+	
+	
+	//뱅킹 입력
+	public Bangking(String name, String no, int password, long balance, int period) {
+		this.name = name;
+		this.no = no;
+		this.password = password;
+		this.balance = balance;
+		this.period = period;
+	}
+
+	/**
+	 * 입금기능
+	 */
+	void deposit(long money) {
+		balance += money;
+		System.out.println("입금이 완료되었습니다.");
+		System.out.println("현재 잔액은 " + balance +" 원 입니다.");
+	}
+	
+	/**
+	 * 출금기능
+	 * @return
+	 */
+	long withdraw(long money, int pwd) {
+		long withdrawMoney = 0;
+
+		if(balance >= money + 1300) {
+			if(password == pwd) {
+				balance -= (money + 1300);
+				withdrawMoney = money;	
+				System.out.println("출금이 완료되었습니다.");
+				System.out.println("출금 후 잔액은 " + balance +" 원 입니다.");
+				
+			}else {
+				System.out.println("비밀번호가 일치하지 않습니다.");
+			}
+			
+		}else {
+			System.out.println("잔액이 부족합니다.");
+		}
+		
+		return withdrawMoney;
+	}
+	
+	/**
+	 * 조회기능
+	 */
+	void display() {
+		System.out.println("-----------계좌 정보-----------");
+		System.out.println("예 금 주 : " + name);
+		System.out.println("계좌번호 : " + no);
+		System.out.println("현재잔액 : " + balance);
+		System.out.println("적금기간 : " + period + " 개월");
+		System.out.println("금    리 : " + Bangking.RATE_OF_INTEREST * 100 + "%");
+		System.out.println("-----------------------------");
+	}
+	
+	void changePassword(int oldPwd, int newPwd) {
+		if(password == oldPwd) {
+			password = newPwd;
+			System.out.println("새비밀번호로 변경되었습니다.");
+		}else {
+			System.out.println("비밀번호가 일치하지 않습니다.");
+		}
+	}
+	
+	long close(int pwd) {
+		long finalMoney = 0L;
+		if(password == pwd) {
+			finalMoney = balance + (long)(balance * Bangking.RATE_OF_INTEREST*period/12);
+			//계좌정보 폐기
+			name = null;
+			no = null;
+			password = 0;
+			balance = 0L;
+			period = 0;
+			System.out.println("해지가 완료되었습니다.");
+			System.out.println("출금한 금액 : " + finalMoney);
+		}else {
+			System.out.println("비밀번호가 일치하지 않습니다.");
+		}
+		
+		return finalMoney;
+	}
+	//계좌번호 존재여부
+	
+}
+package oop2;
+
+import java.util.Scanner;
+
+public class BangkingDemo2 {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int savePoint = 0;
+		Bangking[] banks = new Bangking[100];
+		
+		
+		while(true) {
+			System.out.println();
+			System.out.println("=======================================================");
+			System.out.println("1.신규  2.조회  3.입금  4.출금  5.비번변경  6.해지  0.종료");
+			System.out.println("=======================================================");
+			
+			int inputNum = sc.nextInt();
+			
+			
+			//신규
+			if(inputNum == 1) {
+				
+				System.out.print("이름을 입력하세요 : ");
+				String name = sc.next();
+				System.out.print("계좌번호를 입력하세요 : ");
+				String no = sc.next();
+				System.out.print("비밀번호를 입력하세요 : ");
+				int password = sc.nextInt();
+				System.out.print("입금할 금액을 입력하세요 : ");
+				long balance = sc.nextLong();
+				System.out.print("가입기간을 입력하세요  : ");
+				int period = sc.nextInt();
+				
+				Bangking bank = new Bangking(name, no, password, balance, period);
+				banks[savePoint] = bank;
+				savePoint++;
+				
+				
+			//조회	
+			}else if(inputNum == 2) {
+			
+				System.out.print("계좌번호를 입력하세요 : ");
+				String no = sc.next();
+				
+				for(int i = 0; i < savePoint; i++) {
+					Bangking bank = banks[i];
+					if(no.equals(bank.no)) {
+						bank.display();
+						break;
+					}else {
+						System.out.println("해당하는 계좌번호가 없습니다. 다시 입력해주세요");
+					}
+				}
+				
+				
+			//입금	
+			}else if(inputNum == 3) {
+				boolean isExistNo = false;
+				
+				System.out.print("계좌번호를 입력해주세요 : ");
+				String no = sc.next();
+				System.out.print("입금할 금액을 입력해주세요 : ");
+				long money = sc.nextLong();
+				Bangking foundBankNo = null;
+				
+				for(int i = 0; i < savePoint; i++) {
+					Bangking bank = banks[i];
+					if(no.equals(bank.no)) {
+						isExistNo = true;
+						foundBankNo = bank;
+						break;
+					}
+				}
+				if(isExistNo) {
+					foundBankNo.deposit(money);
+				}else {
+					System.out.println("잘못된 계좌번호입니다. 다시 입력해주세요");
+				}
+				
+			//출금	
+			}else if(inputNum == 4) {
+				boolean isExistNo = false;
+				Bangking foundBankNo = null;
+				
+				System.out.print("계좌번호를 입력해주세요 : ");
+				String no = sc.next();
+				System.out.print("출금할 금액을 입력해주세요 : ");
+				long money = sc.nextLong();
+				System.out.println("계좌 비밀번호를 입력해주세요 : ");
+				int pwd = sc.nextInt();
+				
+				for(int i = 0; i < savePoint; i++) {
+					Bangking bank = banks[i];
+					if(no.equals(bank.no)) {
+						isExistNo = true;
+						foundBankNo = bank;
+						break;
+					}
+				}
+				if(isExistNo) {
+					foundBankNo.withdraw(money, pwd);
+				}else {
+					System.out.println("잘못된 계좌번호입니다. 다시 입력해주세요");
+				}
+				
+			//비밀번호 변경	
+			}else if(inputNum == 5) {
+				boolean isExistNo = false;
+				Bangking foundBankNo = null;
+				
+				System.out.print("계좌번호를 입력해주세요 : ");
+				String no = sc.next();
+				System.out.println("계좌 비밀번호를 입력해주세요 : ");
+				int oldPwd = sc.nextInt();
+				
+				for(int i = 0; i < savePoint; i++) {
+					Bangking bank = banks[i];
+					if(no.equals(bank.no)) {
+						isExistNo = true;
+						foundBankNo = bank;
+						break;
+					}
+				}
+				if(isExistNo) {
+					if(oldPwd == foundBankNo.password) {
+						System.out.print("새로운 비밀번호를 입력해주세요 : ");
+						int newPwd = sc.nextInt();
+						foundBankNo.changePassword(oldPwd, newPwd);
+					}
+					
+				}else {
+					System.out.println("잘못된 계좌번호입니다. 다시 입력해주세요");
+				}
+
+			//해지	
+			}else if(inputNum == 6) {
+				
+				boolean isExistNo = false;
+				Bangking foundBankNo = null;
+				
+				System.out.print("계좌번호를 입력해주세요 : ");
+				String no = sc.next();
+				System.out.println("계좌 비밀번호를 입력해주세요 : ");
+				int pwd = sc.nextInt();
+				
+				for(int i = 0; i < savePoint; i++) {
+					Bangking bank = banks[i];
+					if(no.equals(bank.no)) {
+						isExistNo = true;
+						foundBankNo = bank;
+						break;
+					}
+				}
+				if(isExistNo) {
+					foundBankNo.close(pwd);
+				}else {
+					System.out.println("잘못된 계좌번호입니다. 다시 입력해주세요");
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+			//종료	
+			}else if(inputNum == 0) {
+				System.out.println("프로그램을 종료합니다.");
+				System.exit(0);
+				sc.close();
+				
+			}else {
+				System.out.println("잘못된 입력입니다. 다시 입력해주세요");
+			}
+			
+		
+		}
+		
+		
+	}
+
+}
+
