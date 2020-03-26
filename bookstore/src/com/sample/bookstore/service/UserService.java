@@ -60,4 +60,16 @@ public class UserService {
 	public User[] getAllUsers() {
 		return db;
 	}
+
+	// 대여현황
+	// 이름을 입력받아서 그 사람의 대여현황 출력
+	public User findUserByName(String userName) {
+		User result = null;
+		for (int i = 0; i < position; i++) {
+			if (userName.equals(db[i].name)) {
+				result = db[i];
+			}
+		}
+		return result;
+	}
 }

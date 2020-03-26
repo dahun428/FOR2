@@ -197,4 +197,85 @@ public class BookStoreService {
 			count++;
 		}
 	}
+
+	// 회원이름 입력받아서 대여현황 찾기
+	/*
+	 * public void retrieveRetnalStatus(String userName) { User user =
+	 * userService.findUserByName(userName); int userNo = user.no; Rental[] rentals
+	 * = rentalService.findRentalByUserNo(userNo);
+	 * 
+	 * int count = 0; System.out.println(); System.out.println(
+	 * "==========================================================");
+	 * System.out.println("대여번호	도서번호	도서제목	고객번호	고객이름	대여상태");
+	 * System.out.println(
+	 * "==========================================================");
+	 * while(rentals[count] != null) { Book book =
+	 * bookService.findBookByNo(rentals[count].bookNo);
+	 * 
+	 * System.out.print(rentals[count].no + "\t");
+	 * System.out.print(rentals[count].bookNo + "\t"); System.out.print(book.title +
+	 * "\t"); System.out.print(rentals[count].userNo + "\t");
+	 * System.out.print(userName + "\t"); System.out.print(rentals[count].isRent);
+	 * 
+	 * count++; if(count == rentals.length) { break; } } }
+	 */
+
+	// 회원번호로 대여현황 찾기
+	public void retrieveRetnalStatus(int userNo) {
+		Rental[] rentals = rentalService.findRentalByUserNo(userNo);
+
+		int count = 0;
+
+		System.out.println();
+		System.out.println("==========================================================");
+		System.out.println("도서번호	도서제목	도서가격	대여상태");
+		System.out.println("==========================================================");
+		
+		while (rentals[count] != null) {
+			Book book = bookService.findBookByNo(rentals[count].bookNo);
+
+			System.out.print(rentals[count].bookNo + "\t");
+			System.out.print(book.title + "\t");
+			System.out.print(book.price + "\t");
+			System.out.println(rentals[count].isRent);
+
+			count++;
+			if (count == rentals.length) {
+				break;
+			}
+		}
+	}
+	
+	// 도서번호로 대여현황 찾기
+	public void retrieveRetnalBookStatus(int bookNo) {
+		Rental[] rentals = rentalService.findRentalByBookNo(bookNo);
+
+		int count = 0;
+
+		System.out.println();
+		System.out.println("==========================================================");
+		System.out.println("대여번호	회원번호	회원명");
+		System.out.println("==========================================================");
+		
+		while (rentals[count] != null) {
+			User user = userService.findUserByNo(rentals[count].userNo);
+			
+			System.out.print(rentals[count].no + "\t");
+			System.out.print(rentals[count].userNo + "\t");
+			System.out.println(user.name);
+			
+			count++;
+			if (count == rentals.length) {
+				break;
+			}
+		}
+	}
+	
+	// 회원번호를 입력받아서 일괄반납 시키기
+	public void receiveAllBook(int userNo) {
+		User users = userService.findUserByNo(userNo);
+		users.isDisabled = true;
+		rentalService.returnAllRentalByUserNo(userNo);
+		System.out.println("일괄반납이 완료되었습니다.");
+	}
 }

@@ -16,18 +16,18 @@ public class BookstoreApp {
 		while (true) {
 			System.out.println();
 			System.out.println("[도서 대여점 관리 프로그램]");
-			System.out.println("================================================");
+			System.out.println("===========================================================");
 			System.out.println(" 1.회원관리	2.도서관리	3.대여관리	0.종료");
-			System.out.println("================================================");
+			System.out.println("===========================================================");
 
 			System.out.print("메뉴를 선택하세요 : ");
 			int menuNo = scanner.nextInt();
 
 			if (menuNo == 1) {
 				System.out.println("[회원 관리]");
-				System.out.println("================================================");
-				System.out.println(" 1.등록	2.조회	3.변경	4.탈퇴	5.전체조회");
-				System.out.println("================================================");
+				System.out.println("===========================================================");
+				System.out.println(" 1.등록	2.조회	3.변경	4.탈퇴	5.전체조회	6.대여현황");
+				System.out.println("===========================================================");
 
 				System.out.print("회원관련 메뉴를 선택하세요 : ");
 				int userMenuNo = scanner.nextInt();
@@ -72,13 +72,19 @@ public class BookstoreApp {
 				} else if (userMenuNo == 5) {
 					System.out.println("[전체 회원 조회]");
 					service.retrieveAllUsers();
+				} else if (userMenuNo == 6) {
+					System.out.println("[회원 대여현황]");
+					System.out.print("회원 번호를 입력해주세요 : ");
+					int userNo = scanner.nextInt();
+					
+					service.retrieveRetnalStatus(userNo);
 				}
 
 			} else if (menuNo == 2) {
 				System.out.println("[도서 관리]");
-				System.out.println("================================================");
-				System.out.println(" 1.검색	2.등록	3.수정	4.전체조회");
-				System.out.println("================================================");
+				System.out.println("===========================================================");
+				System.out.println(" 1.검색	2.등록	3.수정	4.전체조회	5.대여현황조회");
+				System.out.println("===========================================================");
 
 				System.out.print("도서관련 메뉴를 선택하세요 : ");
 				int bookMenuNo = scanner.nextInt();
@@ -122,12 +128,18 @@ public class BookstoreApp {
 				} else if (bookMenuNo == 4) {
 					System.out.println("[전체 도서 조회]");
 					service.retrieveAllBooks();
-				}
+				} else if (bookMenuNo == 5) {
+					System.out.println("[대여 현황 조회]");
+					System.out.print("책 번호를 입력해주세요 : ");
+					int bookNo = scanner.nextInt();
+					
+					service.retrieveRetnalBookStatus(bookNo);
+				} 
 			} else if (menuNo == 3) {
 				System.out.println("[대여/반납 관리]");
-				System.out.println("================================================");
-				System.out.println(" 1.대여	2.반납	3.대여현황조회");
-				System.out.println("================================================");
+				System.out.println("===========================================================");
+				System.out.println(" 1.대여	2.반납	3.대여현황조회		4.일괄반납처리");
+				System.out.println("===========================================================");
 
 				System.out.print("대여관련 메뉴를 선택하세요 : ");
 				int rentalMenuNo = scanner.nextInt();
@@ -149,6 +161,11 @@ public class BookstoreApp {
 				} else if (rentalMenuNo == 3) {
 					System.out.println("[대여 현황 조회]");
 					service.retrieveAllRentals();
+				} else if (rentalMenuNo == 4) {
+					System.out.println("[일괄 반납 기능]");
+					System.out.print("회원 번호를 입력해주세요 : ");
+					int userNo = scanner.nextInt();
+					service.receiveAllBook(userNo);
 				}
 			} else if (menuNo == 0) {
 				System.out.println("[프로그램을 종료합니다.]");

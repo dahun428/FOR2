@@ -2,6 +2,7 @@ package com.sample.bookstore.service;
 
 import com.sample.bookstore.vo.Book;
 import com.sample.bookstore.vo.Rental;
+import com.sample.bookstore.vo.User;
 
 public class RentalService {
 
@@ -50,4 +51,27 @@ public class RentalService {
 		return db;
 	}
 
+	// 사용자번호를 받아서 대여 정보 확인
+	public Rental[] findRentalByUserNo(int userNo) {
+		Rental[] results = new Rental[100];
+		int j = 0;
+		for (int i = 0; i < position; i++) {
+			if (userNo == db[i].userNo) {
+				results[j] = db[i];
+			}
+		}
+		return results;
+	}
+
+	// 책 번호 받아서 대여 정보 확인
+	public Rental[] findRentalByBookNo(int bookNo) {
+		Rental[] results = new Rental[100];
+		int j = 0;
+		for (int i = 0; i < position; i++) {
+			if (bookNo == db[i].bookNo) {
+				results[j] = db[i];
+			}
+		}
+		return results;
+	}
 }
