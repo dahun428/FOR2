@@ -5,6 +5,7 @@ import java.util.Scanner;
 import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 
 import com.sample.bookstore.service.BookstoreService;
+import com.sample.bookstore.service.RentalService;
 import com.sample.bookstore.vo.Book;
 import com.sample.bookstore.vo.User;
 
@@ -72,7 +73,7 @@ public class BookstoreApp {
 					
 					service.modifyUserInfo(user);
 
-	/*
+	
 				} else if (userMenuNo == 4) {
 					System.out.println("[회원 탈퇴]");
 					
@@ -80,7 +81,7 @@ public class BookstoreApp {
 					int userNo = scanner.nextInt();
 					
 					service.disabledUser(userNo);
-	 */
+	 
 				}else if (userMenuNo == 5) {
 					System.out.println("[전체회원조회]");
 
@@ -114,11 +115,11 @@ public class BookstoreApp {
 					System.out.println("[도서 등록]");
 					
 					Book book = new Book();
-					System.out.print("도서제목을 입력하세요: ");
+					System.out.println("도서제목을 입력하세요: ");
 					String title = scanner.next();
-					System.out.print("작가를 입력하세요: ");
+					System.out.println("작가를 입력하세요: ");
 					String writer = scanner.next();
-					System.out.print("가격을 입력하세요: ");
+					System.out.println("가격을 입력하세요: ");
 					int price = scanner.nextInt();
 										
 					service.insertNewBook(title, writer,price);
@@ -127,13 +128,13 @@ public class BookstoreApp {
 				} else if (bookMenuNo == 3) {
 					System.out.println("[도서정보 수정]");
 					
-					System.out.print("도서번호를 입력하세요: ");
+					System.out.println("도서번호를 입력하세요: ");
 					int bookNo = scanner.nextInt();
-					System.out.print("도서제목 입력하세요: ");
+					System.out.println("도서제목 입력하세요: ");
 					String title = scanner.next();
-					System.out.print("저자를 입력하세요: ");
+					System.out.println("저자를 입력하세요: ");
 					String writer = scanner.next();
-					System.out.print("도서가격을 입력하세요: ");
+					System.out.println("도서가격을 입력하세요: ");
 					int price = scanner.nextInt();
 					
 					Book book = new Book();
@@ -186,11 +187,28 @@ public class BookstoreApp {
 					
 				} else if (rentalMenuNo == 3) {
 					System.out.println("[대여현황조회]");
+					System.out.println("================================================");
+					System.out.println(" 1.회원번호로 찾기  2.도서번호로 찾기  3.모든 대출현황");
+					System.out.println("================================================");
 					
-			
-					service.retrieveAllRentals();
-					System.out.println("### 모든 대여현황 내역 ###");
-
+					System.out.print("메뉴를 선택하세요: ");
+					int rentalFindMenuNo = scanner.nextInt();
+					
+					if (rentalFindMenuNo==1) {					
+					System.out.print("회원번호를 입력하세요: ");
+					int userNo = scanner.nextInt();
+					service.getRentalsByUserNo(userNo);
+					
+					} else if(rentalFindMenuNo==2) {				
+					System.out.print("도서번호를 입력하세요: ");
+					int bookNo = scanner.nextInt();
+					service.getRentalsByBookNo(bookNo);
+						
+					} else if(rentalFindMenuNo==3) {
+						service.retrieveAllRentals();
+						System.out.println("### 모든 대여현황 내역 ###");
+					}
+					
 				}
 			} else if (menuNo == 0) {
 				System.out.println("[프로그램 종료]");
