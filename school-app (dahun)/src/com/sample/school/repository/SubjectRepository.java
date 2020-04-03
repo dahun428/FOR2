@@ -1,0 +1,93 @@
+package com.sample.school.repository;
+
+import java.util.Arrays;
+
+import com.sample.school.vo.Subject;
+
+public class SubjectRepository {
+
+	private Subject[] db = new Subject[100];
+	private int position = 0;
+	private int sequence = 30000;
+	
+	public SubjectRepository() {
+		insertSubject(new Subject("회로이론", "전자공학과", 3));
+		insertSubject(new Subject("전자기학", "전자공학과", 3));
+		insertSubject(new Subject("공업수학", "전자공학과", 3));
+		insertSubject(new Subject("기초실험실습", "전자공학과", 2));
+		insertSubject(new Subject("이산수학", "컴퓨터공학과", 3));
+		insertSubject(new Subject("프로그램 기초", "컴퓨터공학과", 3));
+		insertSubject(new Subject("데이터베이스 기초", "컴퓨터공학과", 3));
+		insertSubject(new Subject("암호학 개론", "컴퓨터공학과", 3));
+	}
+	
+	public void insertSubject(Subject subject)  {
+		db[position] = subject;
+		subject.setNo(sequence);
+		
+		position++;
+		sequence++;
+	}
+	
+	public Subject getSubjectByNo(int subjectNo) {
+		Subject subject = null;
+		for(int i = 0; i < position; i++) {
+			if(db[i].getNo() == subjectNo) {
+				subject = db[i];
+				break;
+			}
+		}
+		return subject;
+	}
+	public Subject getSubjectByDept(String dept) {
+		Subject subject = null;
+		for(int i = 0; i < position; i++) {
+			if(db[i].getDept().equals(dept)) {
+				subject = db[i];
+				break;
+			}
+		}
+		return subject;
+	}
+	public Subject[] getAllSubjectByDept(String dept) {
+		Subject[] subject = new Subject[position];
+		int count = 0;
+		for(int i = 0; i < position; i++) {
+			if(dept.equals(db[i].getDept())) {
+				subject[count] = db[i];
+				count++;
+			}
+		}
+		return Arrays.copyOfRange(subject, 0, count);
+	}
+	
+	public boolean isExistSubjectByTitle(Subject subject) {
+		boolean isExist = false;
+		for (int i = 0; i < position; i++) {
+			if (db[i].getTitle() == subject.getTitle()) {
+				isExist = true;
+				break;
+			}
+		}
+		return isExist;
+	}
+	
+	public Subject[] getAllSubjectByProfessorNo(int professorNo) {
+	
+		Subject[] subject = new Subject[position];
+		int count = 0;
+		for(int i = 0; i < position; i++) {
+			if(professorNo == db[i].getNo()) {
+				subject[count] = db[i];
+				count++;
+			}
+		}
+		return Arrays.copyOfRange(subject, 0, count);
+	}
+	
+	public Subject[] getAllSubject() {
+		return Arrays.copyOfRange(db, 0, position);
+	}
+	
+}
+
