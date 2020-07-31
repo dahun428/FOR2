@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-07-31T02:33:23.253Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="dWx4v1RoarNpZe_YtuOC" version="13.5.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-07-31T02:33:46.192Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="cX4NgML7eIjBt88xgTBN" version="13.5.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1026" dy="627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -58,28 +58,28 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-21" value="세션확인" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="254" y="170" width="80" height="80" as="geometry" />
+          <mxGeometry x="254" y="130" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="LUTRYHdeON9_UCQ0J5x3-35" target="LUTRYHdeON9_UCQ0J5x3-39">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-35" value="로그아웃 실행" style="whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="234" y="340" width="120" height="60" as="geometry" />
+          <mxGeometry x="234" y="270" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-38" value="yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="295" y="280" width="30" height="20" as="geometry" />
+          <mxGeometry x="300" y="220" width="30" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-39" value="메인화면으로 이동" style="whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="234" y="480" width="120" height="60" as="geometry" />
+          <mxGeometry x="234" y="420" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="LUTRYHdeON9_UCQ0J5x3-42" target="LUTRYHdeON9_UCQ0J5x3-39">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-42" value="만료메시지" style="whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="370" y="340" width="120" height="60" as="geometry" />
+          <mxGeometry x="360" y="240" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-44" value="no" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="399" y="269" width="30" height="20" as="geometry" />
+          <mxGeometry x="390" y="200" width="30" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
