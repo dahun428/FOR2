@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-07-31T08:26:21.960Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="sT9cKpO3W3rG5dVbfjDu" version="13.5.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-07-31T08:26:52.278Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36" etag="Ue9smTb3IN_5K_3uvLTg" version="13.5.7" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1422" dy="713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -280,7 +280,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-131" value="구매버튼 클릭" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="70" y="1390" width="120" height="60" as="geometry" />
+          <mxGeometry x="70" y="1340" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-136" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="LUTRYHdeON9_UCQ0J5x3-133" target="LUTRYHdeON9_UCQ0J5x3-135">
           <mxGeometry relative="1" as="geometry" />
@@ -289,24 +289,24 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-133" value="로그인&lt;br&gt;여부" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="90" y="1520" width="80" height="80" as="geometry" />
+          <mxGeometry x="90" y="1450" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-135" value="구매창" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="70" y="1690" width="120" height="60" as="geometry" />
+          <mxGeometry x="70" y="1580" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-137" value="yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="140" y="1640" width="30" height="20" as="geometry" />
+          <mxGeometry x="135" y="1550" width="30" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-143" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="LUTRYHdeON9_UCQ0J5x3-138" target="LUTRYHdeON9_UCQ0J5x3-142">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-138" value="로그인 화면" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="230" y="1530" width="120" height="60" as="geometry" />
+          <mxGeometry x="225" y="1460" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-144" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="LUTRYHdeON9_UCQ0J5x3-142" target="LUTRYHdeON9_UCQ0J5x3-135">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="490" y="1720" />
+              <mxPoint x="490" y="1610" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -314,16 +314,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-142" value="로그인&lt;br&gt;성공여부" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="450" y="1520" width="80" height="80" as="geometry" />
+          <mxGeometry x="440" y="1450" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-145" value="yes&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="305" y="1690" width="30" height="20" as="geometry" />
+          <mxGeometry x="446" y="1530" width="30" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-146" value="no" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="165" y="1530" width="30" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LUTRYHdeON9_UCQ0J5x3-148" value="no" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="415" y="1510" width="30" height="20" as="geometry" />
+          <mxGeometry x="440" y="1430" width="30" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
