@@ -1,0 +1,49 @@
+SELECT * FROM (SELECT umain.id, umain.nickname, picon.path
+FROM user_main umain
+left JOIN user_sub usub
+ON umain.id = usub.id
+left outer JOIN profile_icon picon
+ON picon.id = usub.iconId
+WHERE admin = 'N') AS users;
+
+
+
+SELECT mates.id, performanceId, seatGroup, seatRate, category, groupSize, userId from
+	(SELECT mmain.id, mmain.performanceId, mmain.seatGroup, mmain.seatRate, 
+			 mmain.category, mmain.groupSize, mmem.userId
+	FROM mate_main mmain
+	JOIN mate_members mmem
+	ON mmain.id = mmem.id
+	where mmain.id = 1) AS mates;
+
+
+/*해당 방의 자세한 정보, 유저 위주 */	
+	SELECT mmain.id, mmain.performanceId, mmain.seatGroup, mmain.seatRate, 
+			 mcat.category, mmain.groupSize, mmem.userId, umain.nickname, picon.path, mtag.tag
+	FROM mate_main mmain
+	JOIN mate_members mmem ON mmain.id = mmem.id
+	JOIN mate_category mcat ON mcat.id = mmain.category
+	JOIN mate_tag mtag ON mtag.id = mmain.id
+	JOIN user_main umain ON umain.id = mmem.userId
+	JOIN user_sub usub ON usub.id = umain.id
+	JOIN profile_icon picon ON usub.iconId = picon.id
+	AND mmain.performanceId = 11;
+/*해당 공연 을 보는 모든 사람들*/
+
+/*해당 공연의 모든 리스트*/
+	SELECT mmain.performanceId, mmain.seatGroup, mmain.category, mmain.groupSize, mmain.seatRate,
+			 pmain.showDate, pmain.showTime, pmain.showNumber, pinfo.title, 
+			 pinfo.category, pinfo.startDate, pinfo.endDate, pinfo.rating, pinfo.runningTime, pinfo.provider, pinfo.imagePath,
+			 pgenre.genre,
+			 pinfo.`explain`, hmain.name, hmain.address, hmain.gpsX, hmain.gpsY
+	FROM mate_main mmain
+	JOIN performance_main pmain ON mmain.performanceId = pmain.id
+	JOIN performance_info pinfo ON pmain.infoId = pinfo.id
+	JOIN hall_info_main hmain ON hmain.id = pmain.hallId
+	JOIN performance_genre pgenre ON pgenre.id = pinfo.id
+	WHERE pmain.showNumber = 1;
+	
+	SELECT * FROM performance_genre;
+	SELECT * FROM mate_tag;
+	SELECT * FROM mate_main;
+	SELECT * FROM mate_members;
