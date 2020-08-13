@@ -1,0 +1,18 @@
+/*해당 공연의 모든 리스트*/
+	SELECT mmain.performanceId, mmain.seatGroup, mmain.category, mmain.groupSize, mmain.seatRate,
+			 pmain.showDate, pmain.showTime, pmain.showNumber, pinfo.title, 
+			 pinfo.category, pinfo.startDate, pinfo.endDate, pinfo.rating, pinfo.runningTime, pinfo.provider, pinfo.imagePath,
+			 pgenre.genre,
+			 pinfo.`explain`, hmain.name, hmain.address, hmain.gpsX, hmain.gpsY
+	FROM mate_main mmain
+	JOIN performance_main pmain ON mmain.performanceId = pmain.id
+	JOIN performance_info pinfo ON pmain.infoId = pinfo.id
+	JOIN hall_info_main hmain ON hmain.id = pmain.hallId
+	JOIN performance_genre pgenre ON pgenre.id = pinfo.id
+	WHERE pmain.showNumber = 1;
+	
+	SELECT * FROM performance_main pmain
+	JOIN hall_info_main hmain ON hmain.id = pmain.hallId
+	WHERE pmain.id = 11 AND pmain.showNumber = 1;
+	
+	SELECT * FROM hall_info_main;
