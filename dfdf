@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 
+/*해당 메이트 방의 공연 */
+SELECT pmain.id, pmain.showdate, pmain.showTime, pmain.showNumber, pinfo.title, pinfo.category, pinfo.startDate, pinfo.endDate, 
+		 pinfo.rating, pinfo.runningTime, pinfo.provider, pinfo.imagePath, pinfo.`explain`,
+		 pgenre.genre, hmain.name, hmain.address, hmain.gpsX, hmain.gpsY
+FROM performance_main pmain
+JOIN performance_info pinfo ON pmain.infoId = pinfo.id
+JOIN performance_genre pgenre ON pgenre.id = pinfo.id
+JOIN hall_info_main hmain ON pmain.hallId = hmain.id
+WHERE pmain.id = 11;
+/* 해당 공연, 회차의, 해당 메이트 방의 유저 리스트 */
+
+SELECT umain.id, umain.nickname  FROM mate_main mmain
+JOIN mate_members mmem ON mmain.id = mmem.id
+JOIN user_main umain ON umain.id = mmem.userId
+WHERE mmain.id = 1;
+/* 해당 공연, 회차의  메이트 방 리스트 all */
+SELECT mmain.id, mmain.performanceId, mmain.seatGroup, mcat.id, mcat.category, mmain.groupSize, mmain.seatRate
+FROM mate_main mmain
+JOIN mate_category mcat ON mmain.category = mcat.id
+WHERE mmain.performanceId = 11;
+/*메이트방 태그들*/
+SELECT mmain.id, mtag.tag
+FROM mate_tag mtag
+right outer JOIN mate_main mmain ON mmain.id = mtag.id
+WHERE mmain.id = 1;
+ -->
+
+<mapper namespace="com.sample.dao.MateDao">
+	
+	<resultMap type="PerformanceSchedule" id="performanceScheduleMap">
+		<result property="id" column="id"/>
+		<result property="showDate" column="showDate"/>
+		<result property="showTime" column="showTime"/>
+		<result property="showNumber" column="showNumber"/>
+		<collection property="hallinfo" column="id" select="getMateHallInfoByPerformanceId" />
+	</resultMap>
+	
+	<resultMap type="Performance" id="performanceMap">
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="category" column="category"/>
+		<result property="endDate" column="endDate"/>
+		<result property="rating" column="rating"/>
+		<result property="runnigTime" column="runnigTime"/>
+		<result property="provider" column="provider"/>
+		<result property="point" column="point"/>
+		<result property="likes" column="likes"/>
+		<result property="imagePath" column="imagePath"/>
+		<result property="explain" column="explain"/>
+		<collection property="schedule" column="id" select="getPerformanceScheduleByPerformanceId"/>
+		<collection property="genre" select="getMatePerformanceGenre" column="id"/>
+	</resultMap>
+	
+
+	<resultMap type="Mate" id="mateMap">
+		<result property="id" column="id"/>
+		<result property="seatGroup" column="seatGroup"/>
+		<result property="category" column="category"/>
+		<result property="groupsize" column="groupsize"/>
+		<result property="seatRate" column="seatRate"/>
+		<association property="performance" column="performanceId" select="getMatePerformanceByPerformanceId" />
+		<collection property="mateMembers" select="getMateUserByMateId" column="id"/>
+		<collection property="mateTags" select="getMateTagByMateId" column="id"/>
+	</resultMap>
+
+	<select id="getMatesByPerformanceId" parameterType="int" resultMap="mateMap">
+		SELECT 
+				mmain.id, 
+				mmain.performanceId, 
+				mmain.seatGroup, 
+				mcat.category,
+				mmain.groupSize, 
+				mmain.seatRate
+		FROM mate_main mmain
+		JOIN mate_category mcat ON mcat.id = mmain.category
+		WHERE mmain.performanceId = #{value}
+	</select>
+	<select id="getMateUserByMateId" parameterType="int" resultType="string">
+		SELECT mmem.userId 
+			FROM mate_members mmem
+			JOIN mate_main mmain ON mmain.id = mmem.id
+			WHERE mmain.id = #{value}
+	</select>
+	<select id="getMateTagByMateId" resultType="com.sample.web.view.MateTag" parameterType="int">
+			SELECT mmain.id 		as mateId,
+				   mtag.tag 		as tagName
+			FROM mate_tag mtag
+			right outer JOIN mate_main mmain ON mmain.id = mtag.id
+			WHERE mmain.id = #{value}
+	</select>
+	<select id="getMatePerformanceByPerformanceId" parameterType="int" resultMap="performanceMap">
+		SELECT 	
+				pmain.id, 
+				pinfo.title, 
+				pinfo.category, 
+				pinfo.startDate, 
+				pinfo.endDate, 
+				pinfo.rating, 
+				pinfo.runningTime, 
+				pinfo.provider, 
+				pinfo.point, 
+				pinfo.likes,
+				pinfo.imagePath , 
+				pinfo.`explain`
+		FROM performance_main pmain
+		JOIN performance_info pinfo ON pinfo.id = pmain.infoId
+		WHERE pmain.id = #{performanceId}
+	</select>
+	<select id="getMatePerformanceGenre" parameterType="int" resultType="string">
+			SELECT genre
+			FROM
+				performance_genre pgenre
+			WHERE pgenre.id = #{value}
+	</select>
+	<select id="getPerformanceScheduleByPerformanceId" parameterType="int" resultMap="performanceScheduleMap">
+		SELECT
+				pmain.id,
+				pmain.showDate,
+				pmain.showTime,
+				pmain.showNumber 
+		FROM performance_main pmain
+		WHERE pmain.id = #{value}
+		
+	</select>
+	<select id="getMateHallInfoByPerformanceId" parameterType="int" resultType="HallInfo">
+		SELECT hmain.id, hmain.name,
+				 hmain.address, hmain.gpsX, hmain.gpsY
+		FROM hall_info_main hmain
+		JOIN performance_main pmain ON pmain.hallId = hmain.id
+		WHERE pmain.id = #{value}
+	</select>
+	
+</mapper>
