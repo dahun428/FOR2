@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-09-09T09:36:29.798Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="54o0f0YdrjEB7KwNATcX" version="13.6.9" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2020-09-09T09:40:53.882Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="zuyMi1efxIF5hInLKine" version="13.6.9" type="github" pages="5">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1221" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -383,32 +383,11 @@
         <mxCell id="TgETMYq4mniE9u3lnfvR-5" value="결제취소 버튼클릭" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="380" y="1930" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TgETMYq4mniE9u3lnfvR-9" target="TgETMYq4mniE9u3lnfvR-12" edge="1">
+        <mxCell id="QEqYYU9Hwd-iHhXTkKjV-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TgETMYq4mniE9u3lnfvR-9" target="QEqYYU9Hwd-iHhXTkKjV-0">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TgETMYq4mniE9u3lnfvR-9" value="결제완료 버튼클릭" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="220" y="2040" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TgETMYq4mniE9u3lnfvR-12" target="TgETMYq4mniE9u3lnfvR-15" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TgETMYq4mniE9u3lnfvR-12" target="TgETMYq4mniE9u3lnfvR-17" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TgETMYq4mniE9u3lnfvR-12" target="TgETMYq4mniE9u3lnfvR-19" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-12" value="결제완료 페이지" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="220" y="2140" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-15" value="마이페이지 이동" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="80" y="2140" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-17" value="메인화면 이동" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="220" y="2230" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="TgETMYq4mniE9u3lnfvR-19" value="메이트 구함 &lt;br&gt;페이지 이동" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="356" y="2140" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TgETMYq4mniE9u3lnfvR-22" value="환불기능" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="860" y="1180" width="60" height="20" as="geometry" />
@@ -637,6 +616,9 @@
         <mxCell id="TgETMYq4mniE9u3lnfvR-105" value="카테고리 선택" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="580" y="3140" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="QEqYYU9Hwd-iHhXTkKjV-0" value="메이트 선택&lt;br&gt;페이지 이동" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="2130" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -748,7 +730,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="f6OaoLkKH5tqrma9jZ2R" name="Page-3">
-    <mxGraphModel dx="2047" dy="1803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1730" dy="913" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="RItmfO8R8bBIUT6QKQwF-0" />
         <mxCell id="RItmfO8R8bBIUT6QKQwF-1" parent="RItmfO8R8bBIUT6QKQwF-0" />
@@ -951,7 +933,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="BYSzlRenE1TPYIYwdJa4" name="Page-4">
-    <mxGraphModel dx="1535" dy="1353" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1730" dy="913" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="iKT7PnDgzef3jiI3-g-x-0" />
         <mxCell id="iKT7PnDgzef3jiI3-g-x-1" parent="iKT7PnDgzef3jiI3-g-x-0" />
@@ -1198,7 +1180,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="fIvANICqXe8eyAXH8AuK" name="Page-5">
-    <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1730" dy="913" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="gDGkhcuLECURuTY0LpnV-0" />
         <mxCell id="gDGkhcuLECURuTY0LpnV-1" parent="gDGkhcuLECURuTY0LpnV-0" />
