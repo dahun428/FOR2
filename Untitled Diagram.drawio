@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-09-09T09:40:53.882Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="zuyMi1efxIF5hInLKine" version="13.6.9" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2020-09-09T11:47:09.248Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" etag="I8IrtWvDOJVtF46JgVwZ" version="13.6.9" type="github" pages="5">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1221" dy="645" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2076" dy="1096" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -370,7 +370,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="TgETMYq4mniE9u3lnfvR-1" value="이전단계 버튼 클릭" style="whiteSpace=wrap;html=1;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="220" y="1840" width="120" height="60" as="geometry" />
+          <mxGeometry x="220" y="1754" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TgETMYq4mniE9u3lnfvR-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TgETMYq4mniE9u3lnfvR-5" target="LUTRYHdeON9_UCQ0J5x3-129" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -617,13 +617,13 @@
           <mxGeometry x="580" y="3140" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="QEqYYU9Hwd-iHhXTkKjV-0" value="메이트 선택&lt;br&gt;페이지 이동" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="220" y="2130" width="120" height="60" as="geometry" />
+          <mxGeometry x="380" y="2040" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="wqQDl2RB0Mr5ig10U5oe" name="Page-2">
-    <mxGraphModel dx="614" dy="541" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="6CEJqN-bYX_KpfKduTSY-0" />
         <mxCell id="6CEJqN-bYX_KpfKduTSY-1" parent="6CEJqN-bYX_KpfKduTSY-0" />
@@ -730,7 +730,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="f6OaoLkKH5tqrma9jZ2R" name="Page-3">
-    <mxGraphModel dx="1730" dy="913" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2076" dy="1096" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="RItmfO8R8bBIUT6QKQwF-0" />
         <mxCell id="RItmfO8R8bBIUT6QKQwF-1" parent="RItmfO8R8bBIUT6QKQwF-0" />
@@ -830,10 +830,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="iEsnKG88enAwM0xa6x_o-43" value="공연리스트" style="rounded=1;whiteSpace=wrap;html=1;" parent="RItmfO8R8bBIUT6QKQwF-1" vertex="1">
-          <mxGeometry x="740" y="60" width="120" height="60" as="geometry" />
+          <mxGeometry x="560" y="160" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="iEsnKG88enAwM0xa6x_o-45" value="공연 수정기능" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="RItmfO8R8bBIUT6QKQwF-1" vertex="1">
-          <mxGeometry x="755" y="20" width="90" height="20" as="geometry" />
+          <mxGeometry x="580" y="120" width="90" height="20" as="geometry" />
         </mxCell>
         <mxCell id="iEsnKG88enAwM0xa6x_o-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" parent="RItmfO8R8bBIUT6QKQwF-1" source="iEsnKG88enAwM0xa6x_o-46" target="iEsnKG88enAwM0xa6x_o-49" edge="1">
           <mxGeometry relative="1" as="geometry" />
